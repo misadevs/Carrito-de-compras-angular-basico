@@ -16,6 +16,7 @@ export class CarritoService {
     }
 
     generarXML() {
+        let subtotal = 0;
         let xml = `<?xml version="1.0" encoding="UTF-8"?>
         <recibo>\n`;
         
@@ -24,9 +25,16 @@ export class CarritoService {
             <nombre>${producto.nombre}</nombre>
             <precio>${producto.precio}</precio>
             </producto>\n`;
+            subtotal += producto.precio;
         });
-        
-        xml += "</recibo>";
+    
+        const iva = subtotal * 0.16;
+        const total = subtotal + iva;
+    
+        xml += `<subtotal>${subtotal.toFixed(2)}</subtotal>
+        <iva>${iva.toFixed(2)}</iva>
+        <total>${total.toFixed(2)}</total>
+        </recibo>`;
         
         const blob = new Blob([xml], {type: 'application/xml'});
         const url = URL.createObjectURL(blob);
@@ -34,11 +42,9 @@ export class CarritoService {
         a.download = 'recibo.xml';
         a.href = url;
         
-        // Append to document, click, then clean up
         document.body.appendChild(a);
         a.click();
         
-        // Clean up
         URL.revokeObjectURL(url);
         document.body.removeChild(a);
     }
