@@ -6,7 +6,9 @@
         <img [src]="producto.imagen" alt="imagen de producto">
         <h3>{{producto.nombre}}</h3>
         <p>Precio: ${{producto.precio}}</p>
+        <p>Cantidad: {{producto.cantidad}}</p>
         <button (click) = "agregarAlCarrito(producto)">Agregar</button>
     </div>
 </div>
 <button (click) = "irAlCarrito()">Carrito</button>
+<button (click) = "irAlInventario()">Inventario</button>

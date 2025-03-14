@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <productos>
+<producto id="1">
+            <nombre>laptop</nombre>
+            <precio>12000</precio>
+            <cantidad>8</cantidad>
+            <imagen>https://m.media-amazon.com/images/I/51fpCMmuoML.jpg</imagen>
+            </producto>
+<producto id="2">
+            <nombre>nintendo switch</nombre>
+            <precio>6500</precio>
+            <cantidad>7</cantidad>
+            <imagen>https://m.media-amazon.com/images/I/51Gz7IimgoL._AC_UF1000,1000_QL80_.jpg</imagen>
+            </producto>
+<producto id="3">
+            <nombre>pc</nombre>
+            <precio>10000</precio>
+            <cantidad>5</cantidad>
+            <imagen>https://m.media-amazon.com/images/I/715zrA5cmLL._AC_SL1500_.jpg</imagen>
+            </producto>
+<producto id="4">
+            <nombre>Router</nombre>
+            <precio>5000</precio>
+            <cantidad>1</cantidad>
+            <imagen>https://media.wired.com/photos/6725354073a47af12825b628/4:3/w_2400,h_1800,c_limit/TP-Link-AX1800-WiFi-6-Router-V4-Color-Background-SOURCE-Amazon.jpg</imagen>
+            </producto>
+<producto id="5">
+            <nombre>Switch</nombre>
+            <precio>8000</precio>
+            <cantidad>2</cantidad>
+            <imagen>https://www.vadavo.com/blog/wp-content/uploads/que-es-un-switch-poe.jpg</imagen>
+            </producto>
+        </productos>

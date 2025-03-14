@@ -4,12 +4,13 @@ import { ProductoService } from '../data-access/producto.service';
 import { CommonModule } from '@angular/common';
 import { CarritoService } from '../../carrito/data-access/carrito.service';
 import { Router } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-producto',
   imports: [CommonModule],
   templateUrl: './producto.component.html',
-  styleUrl: './producto.component.css'
+  styleUrl: './producto.component.css',
 })
 
 export class ProductoComponent implements OnInit {
@@ -19,8 +20,8 @@ export class ProductoComponent implements OnInit {
     private carritoService: CarritoService,
     private router:Router
   ) { }
-  ngOnInit(): void {
-    this.productos = this.productoService.obtenerProducto();
+  async ngOnInit() {
+    this.productos = await lastValueFrom(this.productoService.obtenerProducto()).then((prods) => prods);
   }
 
   agregarAlCarrito(producto:any) {
@@ -29,5 +30,9 @@ export class ProductoComponent implements OnInit {
 
   irAlCarrito() {
     this.router.navigate(['/carrito']);
+  }
+
+  irAlInventario() {
+    this.router.navigate(['/inventario']);
   }
 }
